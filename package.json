@@ -1,0 +1,17 @@
+{
+  "name": "adventofcode2019",
+  "version": "1.0.0",
+  "description": "These are my solutions to [Advent of Code 2019](https://adventofcode.com/2019).",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^12.12.14",
+    "@types/yargs": "^13.0.3",
+    "chalk": "^3.0.0",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.2",
+    "yargs": "^15.0.2"
+  },
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  }
+}
