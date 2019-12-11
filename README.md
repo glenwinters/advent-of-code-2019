@@ -32,3 +32,5 @@ reads the local puzzle input and returns an array of lines.
 ### Start a new day
 
 Generate the skeleton code for a new day with `npx hygen day new`.
+
+![Hygen example](images/hygen_example.png)
