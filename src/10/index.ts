@@ -1,7 +1,6 @@
 import { getInput } from '../utils';
-import { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } from 'constants';
 
-const _getInput = () => getInput(__dirname);
+const _getInput = (): string[] => getInput(__dirname);
 
 const ASTEROID = '#';
 
@@ -21,12 +20,13 @@ const inMapBounds = (map: Map, x: number, y: number): boolean =>
 /**
  * For debugging, print the map.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const printMap = (
   map: Map,
   asteroidsSeen: [number, number][],
   stationX: number,
   stationY: number
-) => {
+): void => {
   for (let y = 0; y < map.length; y++) {
     let line = '';
     for (let x = 0; x < map.length; x++) {
@@ -54,7 +54,11 @@ const greatestCommonDivisor = (a: number, b: number): number => {
   return greatestCommonDivisor(b, a % b);
 };
 
-const countAsteroidsSeen = (map: Map, stationX: number, stationY: number) => {
+const countAsteroidsSeen = (
+  map: Map,
+  stationX: number,
+  stationY: number
+): number => {
   const asteroidsSeen: [number, number][] = [];
   let seen = 0;
   for (let y = 0; y < map.length; y++) {
@@ -114,7 +118,7 @@ const countAsteroidsSeen = (map: Map, stationX: number, stationY: number) => {
 /**
  * Computes the solution to part 1 of the day.
  */
-const part1 = async () => {
+const part1 = async (): Promise<number> => {
   const input = _getInput();
   const map = input.map(s => s.split(''));
   let seenMax = 0;
@@ -139,7 +143,7 @@ const part1 = async () => {
 /**
  * Computes the solution to part 2 of the day.
  */
-const part2 = async () => {
+const part2 = async (): Promise<void> => {
   const input = _getInput();
   // 1) Calculate the angles of the asteroids
   // 2) Sort the angles (sort by distance secondarily)

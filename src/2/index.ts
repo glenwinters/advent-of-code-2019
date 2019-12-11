@@ -1,6 +1,6 @@
 import { getInput } from '../utils';
 
-const _getInput = () => getInput(__dirname);
+const _getInput = (): string[] => getInput(__dirname);
 
 const runProgram = (state: number[], i: number): number[] => {
   const newState = [...state];
@@ -27,7 +27,7 @@ const runProgram = (state: number[], i: number): number[] => {
 /**
  * Computes the solution to part 1 of the day.
  */
-const part1 = async () => {
+const part1 = async (): Promise<number> => {
   const initialState: number[] = _getInput()[0]
     .split(',')
     .map(c => parseInt(c));
@@ -43,7 +43,7 @@ const part1 = async () => {
 /**
  * Computes the solution to part 2 of the day.
  */
-const part2 = async () => {
+const part2 = async (): Promise<number | undefined> => {
   const initialState: number[] = _getInput()[0]
     .split(',')
     .map(c => parseInt(c));

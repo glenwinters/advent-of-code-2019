@@ -1,6 +1,6 @@
 import { getInput } from '../utils';
 
-const _getInput = () => getInput(__dirname);
+const _getInput = (): string[] => getInput(__dirname);
 
 const computeFuelRequired = (mass: number): number => Math.floor(mass / 3) - 2;
 
@@ -14,7 +14,7 @@ const computeFuelRequiredRecursive = (mass: number): number => {
 /**
  * Computes the solution to part 1 of the day.
  */
-const part1 = async () => {
+const part1 = async (): Promise<number> => {
   const masses = _getInput().map(line => parseInt(line));
   const fuelRequiredSum = masses.reduce(
     (memo, mass) => memo + computeFuelRequired(mass),
@@ -26,7 +26,7 @@ const part1 = async () => {
 /**
  * Computes the solution to part 2 of the day.
  */
-const part2 = async () => {
+const part2 = async (): Promise<number> => {
   const masses = _getInput().map(line => parseInt(line));
   const fuelRequiredSum = masses.reduce(
     (memo, mass) => memo + computeFuelRequiredRecursive(mass),
