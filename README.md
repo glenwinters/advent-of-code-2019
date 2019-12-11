@@ -28,3 +28,7 @@ functions `part1` and `part2`, which should return the solutions of each part.
 
 Each solution function starts by calling `getInput`, a helper function that
 reads the local puzzle input and returns an array of lines.
+
+### Start a new day
+
+Generate the skeleton code for a new day with `npx hygen day new`.
